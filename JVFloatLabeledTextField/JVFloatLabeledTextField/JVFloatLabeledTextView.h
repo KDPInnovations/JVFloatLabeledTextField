@@ -49,6 +49,12 @@ IB_DESIGNABLE
 @property (nonatomic, copy) IBInspectable NSString * placeholder;
 
 /**
+ * The placeholder string to be shown in the text view when no other text is present.
+ */
+@property (nonatomic, copy) IBInspectable NSString * optionalLabel;
+
+
+/**
  * Read-only access to the placeholder label.
  */
 @property (nonatomic, strong, readonly) UILabel * placeholderLabel;

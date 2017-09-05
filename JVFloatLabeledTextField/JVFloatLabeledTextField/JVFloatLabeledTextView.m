@@ -142,8 +142,13 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 {
     _placeholder = placeholder;
     _placeholderLabel.text = placeholder;
-    _floatingLabel.text = placeholder;
+    if (_optionalLabel){
+        _floatingLabel.text=_optionalLabel;
+    }else{
+        
     
+    _floatingLabel.text = placeholder;
+    }
     if (0 != self.floatingLabelShouldLockToTop) {
         _floatingLabel.frame = CGRectMake(_floatingLabel.frame.origin.x,
                                           _floatingLabel.frame.origin.y,

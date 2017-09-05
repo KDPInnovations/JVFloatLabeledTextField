@@ -48,6 +48,7 @@ IB_DESIGNABLE
  */
 @property (nonatomic, strong, readonly) UILabel * floatingLabel;
 
+@property (nonatomic) IBInspectable NSString *floatingLabelText;
 /**
  * Padding to be applied to the y coordinate of the floating label upon presentation.
  * Defaults to zero.

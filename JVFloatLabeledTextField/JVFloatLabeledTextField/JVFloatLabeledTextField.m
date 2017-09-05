@@ -69,7 +69,12 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     _animateEvenIfNotFirstResponder = NO;
     _floatingLabelShowAnimationDuration = kFloatingLabelShowAnimationDuration;
     _floatingLabelHideAnimationDuration = kFloatingLabelHideAnimationDuration;
-    [self setFloatingLabelText:self.placeholder];
+    if (_floatingLabelText){
+        [self setFloatingLabelText:_floatingLabelText];
+    }
+    else{
+        [self setFloatingLabelText:self.placeholder];}
+    
 
     _adjustsClearButtonRect = YES;
     _isFloatingLabelFontDefault = YES;
@@ -245,7 +250,13 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 - (void)setPlaceholder:(NSString *)placeholder
 {
     [self setCorrectPlaceholder:placeholder];
-    [self setFloatingLabelText:placeholder];
+    
+    if (_floatingLabelText){
+        [self setFloatingLabelText:_floatingLabelText];
+    }
+    else{
+        [self setFloatingLabelText:placeholder];}
+    
 }
 
 - (void)setAttributedPlaceholder:(NSAttributedString *)attributedPlaceholder
