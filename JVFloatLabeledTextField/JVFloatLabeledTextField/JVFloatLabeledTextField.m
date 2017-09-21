@@ -78,6 +78,17 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
 
     _adjustsClearButtonRect = YES;
     _isFloatingLabelFontDefault = YES;
+    
+    
+    [self addObserver:self forKeyPath:@"text" options:0 context:nil];
+    
+    }
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:@"text"] && object == self) {
+        [self layoutSubviews];
+    }
 }
 
 #pragma mark -
