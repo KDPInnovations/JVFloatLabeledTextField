@@ -110,7 +110,8 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
         textFieldFont = self.font;
     }
     
-    return [UIFont fontWithName:textFieldFont.fontName size:roundf(textFieldFont.pointSize * (_floatingLabelReductionRatio/100))];
+    float maxLabelSize = MIN(roundf(textFieldFont.pointSize * (_floatingLabelReductionRatio/100)),16);
+    return [UIFont fontWithName:textFieldFont.fontName size:maxLabelSize];
 }
 
 - (void)updateDefaultFloatingLabelFont
