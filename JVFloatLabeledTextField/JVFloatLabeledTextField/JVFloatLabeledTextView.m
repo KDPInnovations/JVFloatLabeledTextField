@@ -47,6 +47,15 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer
+{
+    self = [super initWithFrame:frame textContainer:textContainer];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -135,7 +144,7 @@ static CGFloat const kFloatingLabelHideAnimationDuration = 0.3f;
         textViewFont = self.placeholderLabel.font;
     }
     
-    return [UIFont fontWithName:textViewFont.fontName size:roundf(textViewFont.pointSize * 0.7f)];
+    return [textViewFont fontWithSize:roundf(textViewFont.pointSize * 0.7f)];
 }
 
 - (void)setPlaceholder:(NSString *)placeholder
